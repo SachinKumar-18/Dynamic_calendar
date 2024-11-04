@@ -1,0 +1,131 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+.calendar {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 80px;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.year-jump {
+    margin-bottom: 15px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.date {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin: 2px;
+    position: relative; /* For tooltip positioning */
+}
+
+.empty {
+    background-color: transparent;
+}
+
+.date:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.has-event {
+    opacity: 0.9; /* Slightly visible for events */
+}
+
+/* Tooltip Styles */
+.tooltip {
+    display: none;
+    position: absolute;
+    bottom: 100%; /* Position above the date */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+    z-index: 10;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
